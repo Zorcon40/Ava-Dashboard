@@ -200,16 +200,22 @@ async function generateAndStreamTTS(text, ws) {
 }
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+const HOST = process.env.HOST || '0.0.0.0';
+
+server.listen(PORT, HOST, () => {
   console.log('╔════════════════════════════════════════════════════════════╗');
   console.log('║                                                            ║');
   console.log('║              🤖 AVA Dashboard Server                       ║');
   console.log('║                                                            ║');
   console.log('╚════════════════════════════════════════════════════════════╝');
   console.log('');
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on http://${HOST}:${PORT}`);
   console.log(`✅ WebSocket ready for connections`);
   console.log('');
-  console.log('📝 Open http://localhost:3000 in your browser');
+  if (HOST === 'localhost' || HOST === '127.0.0.1') {
+    console.log('📝 Open http://localhost:3000 in your browser');
+  } else {
+    console.log('🌐 Server accessible externally');
+  }
   console.log('');
 });
