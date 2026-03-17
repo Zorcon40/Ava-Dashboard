@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVA Dashboard - OpenClaw Voice Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AVA Dashboard</h1>
+            <p class="subtitle">Your OpenClaw AI Assistant</p>
+            <div class="status-bar">
+                <div class="status-item">
+                    <span class="status-label">Connection:</span>
+                    <span id="connectionStatus" class="status-value">Connecting...</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-label">Microphone:</span>
+                    <span id="micStatus" class="status-value">Inactive</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="voice-section">
+                <h2>Voice Controls</h2>
+                <div class="waveform-container">
+                    <canvas id="waveform" width="800" height="200"></canvas>
+                </div>
+                <div class="controls">
+                    <button id="startListening" class="btn btn-primary">Start Listening</button>
+                    <button id="stopListening" class="btn btn-danger" disabled>Stop Listening</button>
+                    <button id="pushToTalk" class="btn btn-success">Push to Talk</button>
+                </div>
+                <p class="wake-words">
+                    Wake words: <strong>"Hey AVA"</strong> or <strong>"OK AVA"</strong>
+                </p>
+            </div>
+
+            <div class="chat-section">
+                <h2>Conversation</h2>
+                <div id="conversation" class="conversation"></div>
+                <div class="input-section">
+                    <input type="text" id="textInput" placeholder="Type a message or use voice...">
+                    <button id="sendButton" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+
+            <div class="info-section">
+                <h3>System Information</h3>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <strong>Status:</strong>
+                        <span id="systemStatus">Ready</span>
+                    </div>
+                    <div class="info-item">
+                        <strong>Session:</strong>
+                        <span id="sessionId">Not connected</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

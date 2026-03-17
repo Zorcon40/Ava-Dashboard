@@ -1,0 +1,21 @@
+node_modules/
+.env
+*.log
+.DS_Store
+dist/
+build/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.env.local
+.env.production
+
+# Prisma
+prisma/migrations/
+*.db
+*.db-journal
+
+# Vercel
+.vercel
